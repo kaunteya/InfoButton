@@ -39,8 +39,8 @@ class MyBut : NSControl {
         self.addTrackingArea(trackingArea)
     }
 
-    var stringAttributeDict = [NSObject: AnyObject]()
-    var circlePath: NSBezierPath!
+    private var stringAttributeDict = [NSObject: AnyObject]()
+    private var circlePath: NSBezierPath!
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         let frameSize = self.frame.size
