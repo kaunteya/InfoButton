@@ -20,7 +20,8 @@ class ViewController: NSViewController {
 @IBDesignable
 class MyBut : NSControl {
     var mainSize: CGFloat!
-    @IBInspectable var filledColor = true
+    @IBInspectable var filledColor: Bool = true
+    @IBInspectable var primaryColor: NSColor = NSColor.grayColor()
     var trackingArea: NSTrackingArea!
     var mouseInside = false {
         didSet {
@@ -45,34 +46,29 @@ class MyBut : NSControl {
         }
         self.mainSize = self.frame.size.height
     }
+    
     override func drawRect(dirtyRect: NSRect) {
+        var strokeColor = mouseInside ? primaryColor : primaryColor.colorWithAlphaComponent(0.35)
 
-//        NSColor.whiteColor().setFill()
-//        NSRectFillUsingOperation(dirtyRect, NSCompositingOperation.CompositeSourceOver)
-        var strokeColor: NSColor!
-        if mouseInside {
-            strokeColor = NSColor.redColor()
-        } else {
-            strokeColor = NSColor.redColor().colorWithAlphaComponent(0.2)
-        }
         strokeColor.setStroke()
         strokeColor.setFill()
         let offset: CGFloat = 2
         let rect = NSMakeRect(offset, offset, self.frame.width - offset * 2, self.frame.height - offset * 2)
         var circlePath = NSBezierPath(ovalInRect: rect)
-//        circlePath.lineWidth = 2.0
         if filledColor {
             circlePath.fill()
         } else {
             circlePath.stroke()
         }
-        var stringAttributes = [NSObject: AnyObject]()
-        stringAttributes[NSFontAttributeName] = NSFont.systemFontOfSize(mainSize * 0.6)
-        stringAttributes[NSForegroundColorAttributeName] = filledColor ? NSColor.whiteColor() : strokeColor
-        var qw = NSMutableAttributedString(string: "q", attributes: stringAttributes)
-        var stringPoint: CGPoint = NSMakePoint(mainSize / 2 - qw.size.width / 2, mainSize / 2 - qw.size.height / 2)
-        let q: NSString = "?"
-        q.drawAtPoint(stringPoint, withAttributes: stringAttributes)
+        
+        var stringAttributeDict: [NSObject: AnyObject] = [
+            NSFontAttributeName: NSFont.systemFontOfSize(mainSize * 0.6),
+            NSForegroundColorAttributeName: filledColor ? NSColor.whiteColor() : strokeColor
+        ]
+
+        var attributeString = NSAttributedString(string: "?", attributes: stringAttributeDict)
+        var stringLocation = NSMakePoint(mainSize / 2 - attributeString.size.width / 2, mainSize / 2 - attributeString.size.height / 2)
+        attributeString.drawAtPoint(stringLocation)
     }
     
     override func mouseEntered(theEvent: NSEvent) {
