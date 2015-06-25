@@ -749,10 +749,6 @@ IN THIS AREA</string>
                                         <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TJV-db-mLV" customClass="MyBut" customModule="InfoButton" customModuleProvider="target">
                                             <rect key="frame" x="48" y="24" width="70" height="70"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="mainSize">
-                                                    <real key="value" value="31"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="filledColor" value="NO"/>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="secondaryColor">
                                                     <color key="value" red="0.13725490870000001" green="0.49019607900000001" blue="0.8156862855" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
