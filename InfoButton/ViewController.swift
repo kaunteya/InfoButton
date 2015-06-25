@@ -20,8 +20,9 @@ class ViewController: NSViewController {
 @IBDesignable
 class MyBut : NSControl {
     var mainSize: CGFloat!
-    @IBInspectable var filledColor: Bool = true
-    @IBInspectable var primaryColor: NSColor = NSColor.grayColor()
+    @IBInspectable var filledMode: Bool = true
+    @IBInspectable var primaryColor: NSColor = NSColor.scrollBarColor()
+    @IBInspectable var secondaryColor: NSColor = NSColor.whiteColor()
     var trackingArea: NSTrackingArea!
     var mouseInside = false {
         didSet {
@@ -38,6 +39,8 @@ class MyBut : NSControl {
         self.addTrackingArea(trackingArea)
     }
 
+    var stringAttributeDict = [NSObject: AnyObject]()
+    var circlePath: NSBezierPath!
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         let frameSize = self.frame.size
@@ -45,30 +48,28 @@ class MyBut : NSControl {
             self.frame.size.height = self.frame.size.width
         }
         self.mainSize = self.frame.size.height
+        stringAttributeDict[NSFontAttributeName] = NSFont.systemFontOfSize(mainSize * 0.6)
+
+        let inSet: CGFloat = 2
+        let rect = NSMakeRect(inSet, inSet, mainSize - inSet * 2, mainSize - inSet * 2)
+        circlePath = NSBezierPath(ovalInRect: rect)
     }
     
+
     override func drawRect(dirtyRect: NSRect) {
-        var strokeColor = mouseInside ? primaryColor : primaryColor.colorWithAlphaComponent(0.35)
-
-        strokeColor.setStroke()
-        strokeColor.setFill()
-        let offset: CGFloat = 2
-        let rect = NSMakeRect(offset, offset, self.frame.width - offset * 2, self.frame.height - offset * 2)
-        var circlePath = NSBezierPath(ovalInRect: rect)
-        if filledColor {
+        if filledMode {
+            (mouseInside ? primaryColor : primaryColor.colorWithAlphaComponent(0.35)).setFill()
             circlePath.fill()
+            stringAttributeDict[NSForegroundColorAttributeName] = secondaryColor
         } else {
+            (mouseInside ? primaryColor : primaryColor.colorWithAlphaComponent(0.35)).setStroke()
             circlePath.stroke()
+            stringAttributeDict[NSForegroundColorAttributeName] = (mouseInside ? primaryColor : primaryColor.colorWithAlphaComponent(0.35))
         }
-        
-        var stringAttributeDict: [NSObject: AnyObject] = [
-            NSFontAttributeName: NSFont.systemFontOfSize(mainSize * 0.6),
-            NSForegroundColorAttributeName: filledColor ? NSColor.whiteColor() : strokeColor
-        ]
 
-        var attributeString = NSAttributedString(string: "?", attributes: stringAttributeDict)
-        var stringLocation = NSMakePoint(mainSize / 2 - attributeString.size.width / 2, mainSize / 2 - attributeString.size.height / 2)
-        attributeString.drawAtPoint(stringLocation)
+        var attributedString = NSAttributedString(string: "?", attributes: stringAttributeDict)
+        var stringLocation = NSMakePoint(mainSize / 2 - attributedString.size.width / 2, mainSize / 2 - attributedString.size.height / 2)
+        attributedString.drawAtPoint(stringLocation)
     }
     
     override func mouseEntered(theEvent: NSEvent) {

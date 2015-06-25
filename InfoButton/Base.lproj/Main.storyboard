@@ -740,18 +740,30 @@ IN THIS AREA</string>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TJV-db-mLV" customClass="MyBut" customModule="InfoButton" customModuleProvider="target">
-                                <rect key="frame" x="30" y="73" width="20" height="20"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="mainSize">
-                                        <real key="value" value="31"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
-                                        <color key="value" red="0.13725490868091583" green="0.49019607901573181" blue="0.81568628549575806" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filledColor" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </customView>
+                            <box autoresizesSubviews="NO" fixedFrame="YES" title="Box" boxType="custom" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="phl-cA-Q1T">
+                                <rect key="frame" x="282" y="151" width="171" height="110"/>
+                                <view key="contentView">
+                                    <rect key="frame" x="1" y="1" width="169" height="108"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TJV-db-mLV" customClass="MyBut" customModule="InfoButton" customModuleProvider="target">
+                                            <rect key="frame" x="48" y="24" width="70" height="70"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="mainSize">
+                                                    <real key="value" value="31"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="filledColor" value="NO"/>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="secondaryColor">
+                                                    <color key="value" red="0.13725490870000001" green="0.49019607900000001" blue="0.8156862855" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="filledMode" value="NO"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </customView>
+                                    </subviews>
+                                </view>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" red="0.7568628191947937" green="0.92941182851791382" blue="0.7137255072593689" alpha="1" colorSpace="deviceRGB"/>
+                            </box>
                         </subviews>
                     </view>
                 </viewController>
