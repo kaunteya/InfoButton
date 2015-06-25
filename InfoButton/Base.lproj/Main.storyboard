@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,12 +641,12 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="InfoButton" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
@@ -662,20 +662,93 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="100" y="198"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="O8s-9V-tI6">
+            <objects>
+                <viewController id="149-on-rky" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="d1Y-zm-BBm">
+                        <rect key="frame" x="0.0" y="0.0" width="259" height="135"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <visualEffectView appearanceType="vibrantDark" fixedFrame="YES" blendingMode="withinWindow" material="light" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="bn7-ga-4np">
+                                <rect key="frame" x="0.0" y="0.0" width="259" height="135"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yKZ-Qr-Owa">
+                                        <rect key="frame" x="30" y="8" width="152" height="118"/>
+                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="jOi-06-vh2">
+                                            <font key="font" metaFont="system"/>
+                                            <string key="title">This is some text that will be 
+Visible in 
+
+IN THIS AREA</string>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                            </visualEffectView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="xGi-pM-1Fj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384.5" y="541.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="InfoButton" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-Uj-0jM">
+                                <rect key="frame" x="297" y="77" width="25" height="25"/>
+                                <buttonCell key="cell" type="help" bezelStyle="helpButton" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zCc-kG-4RZ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="149-on-rky" kind="popover" popoverAnchorView="XMG-Uj-0jM" popoverBehavior="t" preferredEdge="maxY" id="HVD-Gv-jnr"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8R2-2j-EUX">
+                                <rect key="frame" x="213" y="118" width="63" height="34"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Multiline Label" id="Lgm-dG-DaR">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T47-ew-af5" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
+                                <rect key="frame" x="99" y="194" width="39" height="38"/>
+                                <buttonCell key="cell" type="round" bezelStyle="circular" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iZj-44-1a3">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <string key="alternateTitle">• First Line
+• Second Line is a little longer than expected
+• Third Line
+• Fourth Line</string>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NfF-7J-a59">
+                                <rect key="frame" x="256" y="11" width="39" height="38"/>
+                                <buttonCell key="cell" type="round" title="?" bezelStyle="circular" alignment="center" borderStyle="border" id="wsX-bb-Dta">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TJV-db-mLV" customClass="MyBut" customModule="InfoButton" customModuleProvider="target">
+                                <rect key="frame" x="30" y="73" width="20" height="20"/>
+                            </customView>
+                        </subviews>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="12" y="295"/>
         </scene>
     </scenes>
 </document>
