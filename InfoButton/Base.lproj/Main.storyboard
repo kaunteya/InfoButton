@@ -704,58 +704,25 @@ IN THIS AREA</string>
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-Uj-0jM">
-                                <rect key="frame" x="297" y="77" width="25" height="25"/>
-                                <buttonCell key="cell" type="help" bezelStyle="helpButton" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zCc-kG-4RZ">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hKS-su-JzM">
+                                <rect key="frame" x="20" y="220" width="201" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="jSV-QE-lVf">
                                     <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="149-on-rky" kind="popover" popoverAnchorView="XMG-Uj-0jM" popoverBehavior="t" preferredEdge="maxY" id="HVD-Gv-jnr"/>
-                                </connections>
-                            </button>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8R2-2j-EUX">
-                                <rect key="frame" x="213" y="118" width="63" height="34"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Multiline Label" id="Lgm-dG-DaR">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T47-ew-af5" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
-                                <rect key="frame" x="99" y="194" width="39" height="38"/>
-                                <buttonCell key="cell" type="round" bezelStyle="circular" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iZj-44-1a3">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <string key="alternateTitle">• First Line
-• Second Line is a little longer than expected
-• Third Line
-• Fourth Line</string>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NfF-7J-a59">
-                                <rect key="frame" x="256" y="11" width="39" height="38"/>
-                                <buttonCell key="cell" type="round" title="?" bezelStyle="circular" alignment="center" borderStyle="border" id="wsX-bb-Dta">
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="btK-on-h9j">
+                                <rect key="frame" x="14" y="13" width="105" height="32"/>
+                                <buttonCell key="cell" type="push" title="Print Form" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8gi-BR-wN9">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
-                            <box autoresizesSubviews="NO" fixedFrame="YES" title="Box" boxType="custom" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="phl-cA-Q1T">
-                                <rect key="frame" x="282" y="151" width="171" height="110"/>
-                                <view key="contentView">
-                                    <rect key="frame" x="1" y="1" width="169" height="108"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                <color key="fillColor" red="0.7568628191947937" green="0.92941182851791382" blue="0.7137255072593689" alpha="1" colorSpace="deviceRGB"/>
-                            </box>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TJV-db-mLV" customClass="MyBut" customModule="InfoButton" customModuleProvider="target">
-                                <rect key="frame" x="61" y="91" width="20" height="20"/>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TJV-db-mLV" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
+                                <rect key="frame" x="115" y="20" width="20" height="20"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="secondaryColor">
-                                        <color key="value" red="0.99215692281723022" green="0.9960784912109375" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filledMode" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="contentString" value="This is visible in the popover"/>
                                 </userDefinedRuntimeAttributes>
                             </customView>
                         </subviews>
