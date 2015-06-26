@@ -12,8 +12,8 @@ import Cocoa
 @IBDesignable
 class InfoButton : NSControl, NSPopoverDelegate {
     var mainSize: CGFloat!
-    @IBInspectable var filledMode: Bool = true
-    @IBInspectable var contentString: String = ""
+    @IBInspectable var fillMode: Bool = true
+    @IBInspectable var content: String = ""
     @IBInspectable var primaryColor: NSColor = NSColor.scrollBarColor()
     var secondaryColor: NSColor = NSColor.whiteColor()
 
@@ -62,7 +62,7 @@ class InfoButton : NSControl, NSPopoverDelegate {
             activeColor = primaryColor.colorWithAlphaComponent(0.35)
         }
         
-        if filledMode {
+        if fillMode {
             activeColor.setFill()
             circlePath.fill()
             stringAttributeDict[NSForegroundColorAttributeName] = secondaryColor
@@ -79,7 +79,7 @@ class InfoButton : NSControl, NSPopoverDelegate {
     
     override func mouseDown(theEvent: NSEvent) {
         if popover == nil {
-            popover = NSPopover.makePopoverFor(self.contentString)
+            popover = NSPopover.makePopoverFor(self.content)
             popover.delegate = self
         }
         popover.showRelativeToRect(self.frame, ofView: self.superview!, preferredEdge: NSMaxXEdge)
