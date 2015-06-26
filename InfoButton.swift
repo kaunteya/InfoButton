@@ -15,7 +15,7 @@ class InfoButton : NSControl {
     @IBInspectable var filledMode: Bool = true
     @IBInspectable var contentString: String = ""
     @IBInspectable var primaryColor: NSColor = NSColor.scrollBarColor()
-    @IBInspectable var secondaryColor: NSColor = NSColor.whiteColor()
+    var secondaryColor: NSColor = NSColor.whiteColor()
 
     var mouseInside = false {
         didSet {
@@ -67,9 +67,7 @@ class InfoButton : NSControl {
     }
     
     override func mouseDown(theEvent: NSEvent) {
-        println("Show popover")
         showPopoverWithText(self.contentString)
-
     }
     override func mouseEntered(theEvent: NSEvent) { mouseInside = true }
     override func mouseExited(theEvent: NSEvent) { mouseInside = false }
@@ -83,6 +81,7 @@ class InfoButton : NSControl {
     private let popoverMargin = CGFloat(20)
     func makePopover(textField: NSTextField) ->NSPopover {
         var popover = NSPopover()
+        popover.delegate = self
         popover.behavior = NSPopoverBehavior.Transient
         popover.animates = false
         popover.contentViewController = NSViewController()
@@ -105,5 +104,12 @@ class InfoButton : NSControl {
         return textField
     }
 }
-
+extension InfoButton: NSPopoverDelegate {
+    func popoverWillShow(notification: NSNotification) {
+        //println("Popover will show")
+    }
+    func popoverDidClose(notification: NSNotification) {
+        //println("Popover closed")
+    }
+}
 //NSMinXEdge NSMinYEdge NSMaxXEdge NSMaxYEdge

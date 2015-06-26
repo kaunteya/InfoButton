@@ -665,38 +665,6 @@
             <point key="canvasLocation" x="100" y="198"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="O8s-9V-tI6">
-            <objects>
-                <viewController id="149-on-rky" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="d1Y-zm-BBm">
-                        <rect key="frame" x="0.0" y="0.0" width="259" height="135"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <visualEffectView appearanceType="vibrantDark" fixedFrame="YES" blendingMode="withinWindow" material="light" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="bn7-ga-4np">
-                                <rect key="frame" x="0.0" y="0.0" width="259" height="135"/>
-                                <subviews>
-                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yKZ-Qr-Owa">
-                                        <rect key="frame" x="30" y="8" width="152" height="118"/>
-                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="jOi-06-vh2">
-                                            <font key="font" metaFont="system"/>
-                                            <string key="title">This is some text that will be 
-Visible in 
-
-IN THIS AREA</string>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                </subviews>
-                            </visualEffectView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <customObject id="xGi-pM-1Fj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="384.5" y="541.5"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="InfoButton" customModuleProvider="target" sceneMemberID="viewController">
@@ -705,8 +673,8 @@ IN THIS AREA</string>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hKS-su-JzM">
-                                <rect key="frame" x="20" y="220" width="201" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="jSV-QE-lVf">
+                                <rect key="frame" x="79" y="66" width="201" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" allowsEditingTextAttributes="YES" id="jSV-QE-lVf">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -714,7 +682,7 @@ IN THIS AREA</string>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="btK-on-h9j">
                                 <rect key="frame" x="14" y="13" width="105" height="32"/>
-                                <buttonCell key="cell" type="push" title="Print Form" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8gi-BR-wN9">
+                                <buttonCell key="cell" type="push" title="Print Form" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8gi-BR-wN9">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -722,7 +690,89 @@ IN THIS AREA</string>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TJV-db-mLV" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
                                 <rect key="frame" x="115" y="20" width="20" height="20"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="contentString" value="This is visible in the popover"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="contentString">
+                                        <string key="value">Form printing is a Pro Feature.
+To Activate it, you can 
+
+●  Buy the pro version for $2
+●  Tweet this link
+●  Share on facebook</string>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="GLf-f2-OWx">
+                                <rect key="frame" x="0.0" y="133" width="480" height="5"/>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <font key="titleFont" metaFont="system"/>
+                            </box>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QoL-ES-orT" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
+                                <rect key="frame" x="45" y="215" width="20" height="20"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="contentString" value="This is the default InfoButton"/>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vdb-Jj-Ijh" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
+                                <rect key="frame" x="20" y="144" width="20" height="20"/>
+                            </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bIt-y5-1Cc" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
+                                <rect key="frame" x="278" y="215" width="20" height="20"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" red="0.25490197539329529" green="0.63529413938522339" blue="0.87058824300765991" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="contentString" value="This Info Button has Blue Primary Color"/>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEf-52-nKN" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
+                                <rect key="frame" x="156" y="215" width="20" height="20"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filledMode" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="contentString" value="This InfoButton has Filled Mode reversed"/>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NbF-w4-PII">
+                                <rect key="frame" x="11" y="110" width="64" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Examples" id="cVQ-m0-oYJ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aop-9x-q9F">
+                                <rect key="frame" x="23" y="66" width="44" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Phone" id="sk5-il-yec">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfV-NK-FEb" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
+                                <rect key="frame" x="282" y="66" width="20" height="20"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="contentString">
+                                        <string key="value">☎️ We will use your phone number only in case of Emergency
+
+You wont receive any promotional SMS from us 😊.</string>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filledMode" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eYE-7N-lFY" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
+                                <rect key="frame" x="292" y="162" width="20" height="20"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="contentString">
+                                        <string key="value">This is the sample Content
+
+● First point
+● Second point
+
+You can also set emoji like
+⚡️🎷</string>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </customView>
                         </subviews>
