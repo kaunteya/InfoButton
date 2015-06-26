@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 
 @IBDesignable
-class InfoButton : NSControl {
+class InfoButton : NSControl, NSPopoverDelegate {
     var mainSize: CGFloat!
     @IBInspectable var filledMode: Bool = true
     @IBInspectable var contentString: String = ""
@@ -35,6 +35,10 @@ class InfoButton : NSControl {
     
     private var stringAttributeDict = [NSObject: AnyObject]()
     private var circlePath: NSBezierPath!
+
+    var popover: NSPopover!
+
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         let frameSize = self.frame.size
@@ -74,49 +78,49 @@ class InfoButton : NSControl {
     }
     
     override func mouseDown(theEvent: NSEvent) {
-        showPopoverWithText(self.contentString)
-    }
-    override func mouseEntered(theEvent: NSEvent) { mouseInside = true }
-    override func mouseExited(theEvent: NSEvent) { mouseInside = false }
-    
-    func showPopoverWithText(text: String) {
-        var textField = makeTextField(text)
-        var popover = makePopover(textField)
+        if popover == nil {
+            popover = NSPopover.makePopoverFor(self.contentString)
+            popover.delegate = self
+        }
         popover.showRelativeToRect(self.frame, ofView: self.superview!, preferredEdge: NSMaxXEdge)
     }
 
-    private let popoverMargin = CGFloat(20)
-    var popover: NSPopover?
-    func makePopover(textField: NSTextField) ->NSPopover {
-        popover = NSPopover()
-        popover!.delegate = self
-        popover!.behavior = NSPopoverBehavior.Transient
-        popover!.animates = false
-        popover!.contentViewController = NSViewController()
-        popover!.contentViewController!.view = NSView(frame: NSZeroRect)
-        popover!.contentViewController!.view.addSubview(textField)
-        var viewSize = textField.frame.size; viewSize.width += (popoverMargin * 2); viewSize.height += (popoverMargin * 2)
-        popover!.contentSize = viewSize
-        return popover!
-    }
-    
-    func makeTextField(content: String) -> NSTextField {
-        var textField = NSTextField(frame: NSZeroRect)
-        textField.usesSingleLineMode = false
-        textField.editable = false
-        textField.stringValue = content
-        textField.bordered = false
-        textField.drawsBackground = false
-        textField.sizeToFit()
-        textField.setFrameOrigin(NSMakePoint(popoverMargin, popoverMargin))
-        return textField
-    }
-}
-
-extension InfoButton: NSPopoverDelegate {
-    func popoverWillShow(notification: NSNotification) { }
+    override func mouseEntered(theEvent: NSEvent) { mouseInside = true }
+    override func mouseExited(theEvent: NSEvent) { mouseInside = false }
     func popoverDidClose(notification: NSNotification) {
         self.needsDisplay = true
+    }
+
+}
+
+//MARK: Extension for making a popover from string
+extension NSPopover {
+    class func makePopoverFor(button: String) -> NSPopover {
+        let popoverMargin = CGFloat(20)
+        func makeTextField(content: String) -> NSTextField {
+            var textField = NSTextField(frame: NSZeroRect)
+            textField.usesSingleLineMode = false
+            textField.editable = false
+            textField.stringValue = content
+            textField.bordered = false
+            textField.drawsBackground = false
+            textField.sizeToFit()
+            textField.setFrameOrigin(NSMakePoint(popoverMargin, popoverMargin))
+            return textField
+        }
+        
+        
+        var popover = NSPopover()
+        popover.behavior = NSPopoverBehavior.Transient
+        popover.animates = false
+        popover.contentViewController = NSViewController()
+        popover.contentViewController!.view = NSView(frame: NSZeroRect)
+        
+        var textField = makeTextField(button)
+        popover.contentViewController!.view.addSubview(textField)
+        var viewSize = textField.frame.size; viewSize.width += (popoverMargin * 2); viewSize.height += (popoverMargin * 2)
+        popover.contentSize = viewSize
+        return popover
     }
 }
 //NSMinXEdge NSMinYEdge NSMaxXEdge NSMaxYEdge
