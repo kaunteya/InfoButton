@@ -4,8 +4,8 @@
 ![](./images/demo.png)
 
 ##Features
-- Completely design from Interface builder
-- Light Mode and Filled Mode
+- Easy to Use
+- Light Mode and Fill Mode
 - Simple and lightweight
 
 ##Requirements
@@ -15,15 +15,15 @@
 ##Usage
 ####Initial Steps
 1. Drag `InfoButton.swift` to your project.
-2. In Interface builder, drag a Custom View from Object Library.
-3. Set Custom Class to InfoButton
+2. In Interface builder, drag a `Custom View` from Object Library.
+3. Set Custom Class to `InfoButton`
 
 ####Configuration
-Since class is `@IBDesignable`, Attribute Inspector gets updated like this.
+Since `InfoButton` is `@IBDesignable`, Attribute Inspector gets updated like this.
 
 ![](./images/attrInsp.png)
 
-Update `Filled Mode`, `Content String` and `Primary Color` and there you have Info Button ready without writing a single line of code.
+Update `Fill Mode`, `Content` and `Primary Color` and there you have InfoButton ready without writing a single line of code.
 
 ##Notes
 - Make sure that height and width of InfoButton are equal
