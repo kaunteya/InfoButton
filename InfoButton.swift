@@ -16,13 +16,14 @@ class InfoButton : NSControl {
     @IBInspectable var contentString: String = ""
     @IBInspectable var primaryColor: NSColor = NSColor.scrollBarColor()
     @IBInspectable var secondaryColor: NSColor = NSColor.whiteColor()
-    var trackingArea: NSTrackingArea!
+
     var mouseInside = false {
         didSet {
             self.needsDisplay = true
         }
     }
     
+    var trackingArea: NSTrackingArea!
     override func updateTrackingAreas() {
         super.updateTrackingAreas()
         if trackingArea != nil {
@@ -77,7 +78,6 @@ class InfoButton : NSControl {
         var textField = makeTextField(text)
         var popover = makePopover(textField)
         popover.showRelativeToRect(self.frame, ofView: self.superview!, preferredEdge: NSMaxXEdge)
-        
     }
 
     private let popoverMargin = CGFloat(20)
@@ -88,7 +88,6 @@ class InfoButton : NSControl {
         popover.contentViewController = NSViewController()
         popover.contentViewController!.view = NSView(frame: NSZeroRect)
         popover.contentViewController!.view.addSubview(textField)
-        popover.contentViewController!.view.wantsLayer = true
         var viewSize = textField.frame.size; viewSize.width += (popoverMargin * 2); viewSize.height += (popoverMargin * 2)
         popover.contentSize = viewSize
         return popover
