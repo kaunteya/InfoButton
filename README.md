@@ -9,8 +9,8 @@
 - Simple and lightweight
 
 ##Requirements
-- Mac OS X 10.10+
-- Xcode 6.3
+- Mac OS X 10.9
+- Xcode 6
 
 ##Usage
 ####Initial Steps
@@ -26,7 +26,7 @@ Since `InfoButton` is `@IBDesignable`, Attribute Inspector gets updated like thi
 Update `Fill Mode`, `Content` and `Primary Color` and there you have InfoButton ready without writing a single line of code.
 
 ##Notes
-- Make sure that height and width of InfoButton are equal
+- Make sure the height and width of InfoButton are equal
 - Press ⌥ ↩ for newline in text field of IB.(Option + Return)
 
 ##Todo
