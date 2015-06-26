@@ -43,7 +43,7 @@ class InfoButton : NSControl {
         }
         self.mainSize = self.frame.size.height
         stringAttributeDict[NSFontAttributeName] = NSFont.systemFontOfSize(mainSize * 0.6)
-        
+
         let inSet: CGFloat = 2
         let rect = NSMakeRect(inSet, inSet, mainSize - inSet * 2, mainSize - inSet * 2)
         circlePath = NSBezierPath(ovalInRect: rect)
@@ -51,12 +51,19 @@ class InfoButton : NSControl {
     
     
     override func drawRect(dirtyRect: NSRect) {
+        var activeColor: NSColor!
+        if mouseInside || (popover != nil && popover!.shown){
+            activeColor = primaryColor
+        } else {
+            activeColor = primaryColor.colorWithAlphaComponent(0.35)
+        }
+        
         if filledMode {
-            (mouseInside ? primaryColor : primaryColor.colorWithAlphaComponent(0.35)).setFill()
+            activeColor.setFill()
             circlePath.fill()
             stringAttributeDict[NSForegroundColorAttributeName] = secondaryColor
         } else {
-            (mouseInside ? primaryColor : primaryColor.colorWithAlphaComponent(0.35)).setStroke()
+            activeColor.setStroke()
             circlePath.stroke()
             stringAttributeDict[NSForegroundColorAttributeName] = (mouseInside ? primaryColor : primaryColor.colorWithAlphaComponent(0.35))
         }
@@ -79,17 +86,18 @@ class InfoButton : NSControl {
     }
 
     private let popoverMargin = CGFloat(20)
+    var popover: NSPopover?
     func makePopover(textField: NSTextField) ->NSPopover {
-        var popover = NSPopover()
-        popover.delegate = self
-        popover.behavior = NSPopoverBehavior.Transient
-        popover.animates = false
-        popover.contentViewController = NSViewController()
-        popover.contentViewController!.view = NSView(frame: NSZeroRect)
-        popover.contentViewController!.view.addSubview(textField)
+        popover = NSPopover()
+        popover!.delegate = self
+        popover!.behavior = NSPopoverBehavior.Transient
+        popover!.animates = false
+        popover!.contentViewController = NSViewController()
+        popover!.contentViewController!.view = NSView(frame: NSZeroRect)
+        popover!.contentViewController!.view.addSubview(textField)
         var viewSize = textField.frame.size; viewSize.width += (popoverMargin * 2); viewSize.height += (popoverMargin * 2)
-        popover.contentSize = viewSize
-        return popover
+        popover!.contentSize = viewSize
+        return popover!
     }
     
     func makeTextField(content: String) -> NSTextField {
@@ -104,12 +112,11 @@ class InfoButton : NSControl {
         return textField
     }
 }
+
 extension InfoButton: NSPopoverDelegate {
-    func popoverWillShow(notification: NSNotification) {
-        //println("Popover will show")
-    }
+    func popoverWillShow(notification: NSNotification) { }
     func popoverDidClose(notification: NSNotification) {
-        //println("Popover closed")
+        self.needsDisplay = true
     }
 }
 //NSMinXEdge NSMinYEdge NSMaxXEdge NSMaxYEdge

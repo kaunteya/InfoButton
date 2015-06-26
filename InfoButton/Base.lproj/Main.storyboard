@@ -650,7 +650,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="InfoButton Demo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -662,7 +662,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="198"/>
+            <point key="canvasLocation" x="52" y="190"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -707,16 +707,13 @@ To Activate it, you can
                                 <font key="titleFont" metaFont="system"/>
                             </box>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QoL-ES-orT" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
-                                <rect key="frame" x="45" y="215" width="20" height="20"/>
+                                <rect key="frame" x="104" y="218" width="20" height="20"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="contentString" value="This is the default InfoButton"/>
                                 </userDefinedRuntimeAttributes>
                             </customView>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vdb-Jj-Ijh" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
-                                <rect key="frame" x="20" y="144" width="20" height="20"/>
-                            </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bIt-y5-1Cc" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
-                                <rect key="frame" x="278" y="215" width="20" height="20"/>
+                                <rect key="frame" x="420" y="214" width="20" height="20"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
                                         <color key="value" red="0.25490197539329529" green="0.63529413938522339" blue="0.87058824300765991" alpha="1" colorSpace="calibratedRGB"/>
@@ -725,16 +722,16 @@ To Activate it, you can
                                 </userDefinedRuntimeAttributes>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEf-52-nKN" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
-                                <rect key="frame" x="156" y="215" width="20" height="20"/>
+                                <rect key="frame" x="260" y="216" width="20" height="20"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="filledMode" value="NO"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="contentString" value="This InfoButton has Filled Mode reversed"/>
                                 </userDefinedRuntimeAttributes>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NbF-w4-PII">
-                                <rect key="frame" x="11" y="110" width="64" height="17"/>
+                                <rect key="frame" x="11" y="110" width="81" height="19"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Examples" id="cVQ-m0-oYJ">
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="systemBold" size="16"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -762,7 +759,7 @@ You wont receive any promotional SMS from us 😊.</string>
                                 </userDefinedRuntimeAttributes>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eYE-7N-lFY" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
-                                <rect key="frame" x="292" y="162" width="20" height="20"/>
+                                <rect key="frame" x="258" y="156" width="20" height="20"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="contentString">
                                         <string key="value">This is the sample Content
@@ -773,14 +770,60 @@ You wont receive any promotional SMS from us 😊.</string>
 You can also set emoji like
 ⚡️🎷</string>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" red="0.10980392247438431" green="0.5058823823928833" blue="0.37647059559822083" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25b-tW-XUw">
+                                <rect key="frame" x="11" y="218" width="93" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Default Button" id="IE1-sI-52Q">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Er3-9I-uP0">
+                                <rect key="frame" x="152" y="218" width="106" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Filled Mode OFF" id="Vr7-hl-LEZ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CG7-d9-8Yv">
+                                <rect key="frame" x="314" y="216" width="104" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Blue Info Button" id="kZX-Es-Oql">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Feg-QZ-tVl">
+                                <rect key="frame" x="154" y="158" width="95" height="20"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sample Content" id="lC3-ti-X4R">
+                                    <font key="font" size="13" name="HelveticaNeue-Light"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IMR-hT-b9H">
+                                <rect key="frame" x="11" y="158" width="97" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Empty Content" id="1BT-8y-Px5">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vdb-Jj-Ijh" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
+                                <rect key="frame" x="105" y="156" width="20" height="20"/>
                             </customView>
                         </subviews>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="295"/>
+            <point key="canvasLocation" x="163" y="478"/>
         </scene>
     </scenes>
 </document>

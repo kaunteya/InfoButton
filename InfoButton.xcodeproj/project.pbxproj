@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E362478E1B3D42140046EE9E /* Test.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E362478D1B3D42140046EE9E /* Test.rtf */; };
 		E3E100831B3C3D97007F6F02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E100821B3C3D97007F6F02 /* AppDelegate.swift */; };
 		E3E100851B3C3D97007F6F02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E100841B3C3D97007F6F02 /* ViewController.swift */; };
 		E3E100871B3C3D97007F6F02 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3E100861B3C3D97007F6F02 /* Images.xcassets */; };
@@ -27,7 +26,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E362478D1B3D42140046EE9E /* Test.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Test.rtf; sourceTree = "<group>"; };
 		E3E1007D1B3C3D97007F6F02 /* InfoButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfoButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E100811B3C3D97007F6F02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3E100821B3C3D97007F6F02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 				E3E100841B3C3D97007F6F02 /* ViewController.swift */,
 				E3E100861B3C3D97007F6F02 /* Images.xcassets */,
 				E3E100881B3C3D97007F6F02 /* Main.storyboard */,
-				E362478D1B3D42140046EE9E /* Test.rtf */,
 				E3E100801B3C3D97007F6F02 /* Supporting Files */,
 			);
 			path = InfoButton;
@@ -197,7 +194,6 @@
 			files = (
 				E3E100871B3C3D97007F6F02 /* Images.xcassets in Resources */,
 				E3E1008A1B3C3D97007F6F02 /* Main.storyboard in Resources */,
-				E362478E1B3D42140046EE9E /* Test.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
