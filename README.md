@@ -49,6 +49,7 @@ Update `Fill Mode`, `Content` and `Primary Color` and there you have InfoButton 
 
 ##Todo
 - RTF Support for Popover content
+- Popover auto disappear
 
 ##License
 `InfoButton` is released under the MIT license. See LICENSE for details.
