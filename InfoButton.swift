@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 
 @IBDesignable
-class InfoButton : NSControl, NSPopoverDelegate {
+public class InfoButton : NSControl, NSPopoverDelegate {
     var mainSize: CGFloat!
     @IBInspectable var fillMode: Bool = true
     @IBInspectable var content: String = ""
@@ -24,7 +24,7 @@ class InfoButton : NSControl, NSPopoverDelegate {
     }
     
     var trackingArea: NSTrackingArea!
-    override func updateTrackingAreas() {
+    override public func updateTrackingAreas() {
         super.updateTrackingAreas()
         if trackingArea != nil {
             self.removeTrackingArea(trackingArea)
@@ -39,7 +39,7 @@ class InfoButton : NSControl, NSPopoverDelegate {
     var popover: NSPopover!
 
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         let frameSize = self.frame.size
         if frameSize.width != frameSize.height {
@@ -54,7 +54,7 @@ class InfoButton : NSControl, NSPopoverDelegate {
     }
     
     
-    override func drawRect(dirtyRect: NSRect) {
+    override public func drawRect(dirtyRect: NSRect) {
         var activeColor: NSColor!
         if mouseInside || (popover != nil && popover!.shown){
             activeColor = primaryColor
@@ -77,7 +77,7 @@ class InfoButton : NSControl, NSPopoverDelegate {
         attributedString.drawAtPoint(stringLocation)
     }
     
-    override func mouseDown(theEvent: NSEvent) {
+    override public func mouseDown(theEvent: NSEvent) {
         if popover == nil {
             popover = NSPopover.makePopoverFor(self.content)
             popover.delegate = self
@@ -85,9 +85,9 @@ class InfoButton : NSControl, NSPopoverDelegate {
         popover.showRelativeToRect(self.frame, ofView: self.superview!, preferredEdge: NSMaxXEdge)
     }
 
-    override func mouseEntered(theEvent: NSEvent) { mouseInside = true }
-    override func mouseExited(theEvent: NSEvent) { mouseInside = false }
-    func popoverDidClose(notification: NSNotification) {
+    override public func mouseEntered(theEvent: NSEvent) { mouseInside = true }
+    override public func mouseExited(theEvent: NSEvent) { mouseInside = false }
+    public func popoverDidClose(notification: NSNotification) {
         self.needsDisplay = true
     }
 
