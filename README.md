@@ -54,3 +54,7 @@ Update `Fill Mode`, `Content` and `Primary Color` and there you have InfoButton 
 ##License
 `InfoButton` is released under the MIT license. See LICENSE for details.
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kaunteya/infobutton/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
