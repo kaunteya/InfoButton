@@ -39,7 +39,9 @@ In Interface builder, drag a `Custom View` from Object Library and set `Custom C
 
 Since InfoButton is `@IBDesignable`, Attribute Inspector gets updated like this.
 
-![](./images/attrInsp.png)
+<div align="center">
+<img src="images/attrInsp.png" style = "width:350px;"/>
+</div>
 
 Update `Fill Mode`, `Content` and `Primary Color` and there you have InfoButton ready without writing a single line of code.
 
@@ -57,4 +59,3 @@ Update `Fill Mode`, `Content` and `Primary Color` and there you have InfoButton 
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kaunteya/infobutton/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
