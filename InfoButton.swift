@@ -29,7 +29,7 @@ public class InfoButton : NSControl, NSPopoverDelegate {
         if trackingArea != nil {
             self.removeTrackingArea(trackingArea)
         }
-        trackingArea = NSTrackingArea(rect: self.bounds, options: NSTrackingAreaOptions.MouseEnteredAndExited | NSTrackingAreaOptions.ActiveAlways, owner: self, userInfo: nil)
+        trackingArea = NSTrackingArea(rect: self.bounds, options: [NSTrackingAreaOptions.MouseEnteredAndExited, NSTrackingAreaOptions.ActiveAlways], owner: self, userInfo: nil)
         self.addTrackingArea(trackingArea)
     }
     
@@ -82,7 +82,7 @@ public class InfoButton : NSControl, NSPopoverDelegate {
             popover = NSPopover.makePopoverFor(self.content)
             popover.delegate = self
         }
-        popover.showRelativeToRect(self.frame, ofView: self.superview!, preferredEdge: NSMaxXEdge)
+        popover.showRelativeToRect(self.frame, ofView: self.superview!, preferredEdge: NSRectEdge.MaxX)
     }
 
     override public func mouseEntered(theEvent: NSEvent) { mouseInside = true }
@@ -98,7 +98,7 @@ extension NSPopover {
     class func makePopoverFor(button: String) -> NSPopover {
         let popoverMargin = CGFloat(20)
         func makeTextField(content: String) -> NSTextField {
-            var textField = NSTextField(frame: NSZeroRect)
+            let textField = NSTextField(frame: NSZeroRect)
             textField.usesSingleLineMode = false
             textField.editable = false
             textField.stringValue = content
@@ -110,13 +110,13 @@ extension NSPopover {
         }
         
         
-        var popover = NSPopover()
+        let popover = NSPopover()
         popover.behavior = NSPopoverBehavior.Transient
         popover.animates = false
         popover.contentViewController = NSViewController()
         popover.contentViewController!.view = NSView(frame: NSZeroRect)
         
-        var textField = makeTextField(button)
+        let textField = makeTextField(button)
         popover.contentViewController!.view.addSubview(textField)
         var viewSize = textField.frame.size; viewSize.width += (popoverMargin * 2); viewSize.height += (popoverMargin * 2)
         popover.contentSize = viewSize
