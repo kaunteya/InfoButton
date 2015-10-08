@@ -33,7 +33,7 @@ public class InfoButton : NSControl, NSPopoverDelegate {
         self.addTrackingArea(trackingArea)
     }
     
-    private var stringAttributeDict = [NSObject: AnyObject]()
+    private var stringAttributeDict = [String: AnyObject]()
     private var circlePath: NSBezierPath!
 
     var popover: NSPopover!
@@ -71,9 +71,9 @@ public class InfoButton : NSControl, NSPopoverDelegate {
             circlePath.stroke()
             stringAttributeDict[NSForegroundColorAttributeName] = (mouseInside ? primaryColor : primaryColor.colorWithAlphaComponent(0.35))
         }
-        
-        var attributedString = NSAttributedString(string: "?", attributes: stringAttributeDict)
-        var stringLocation = NSMakePoint(mainSize / 2 - attributedString.size.width / 2, mainSize / 2 - attributedString.size.height / 2)
+
+        let attributedString = NSAttributedString(string: "?", attributes: stringAttributeDict)
+        let stringLocation = NSMakePoint(mainSize / 2 - attributedString.size().width / 2, mainSize / 2 - attributedString.size().height / 2)
         attributedString.drawAtPoint(stringLocation)
     }
     
@@ -99,7 +99,7 @@ extension NSPopover {
         let popoverMargin = CGFloat(20)
         func makeTextField(content: String) -> NSTextField {
             let textField = NSTextField(frame: NSZeroRect)
-            textField.usesSingleLineMode = false
+//            textField.usesSingleLineMode = false
             textField.editable = false
             textField.stringValue = content
             textField.bordered = false
