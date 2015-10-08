@@ -51,6 +51,7 @@ Update `Fill Mode`, `Content` and `Primary Color` and there you have InfoButton 
 
 ##Todo
 - RTF Support for Popover content
+- Hide after n clicks
 - Popover auto disappear
 
 ##License
