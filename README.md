@@ -1,6 +1,6 @@
 #InfoButton
 
-`InfoButton` is simple and lightweight Information Button for Mac OSX implemented in Swift
+`InfoButton` is simple and lightweight Information Button for Mac OSX implemented in Swift 2.0
 ![](./images/demo.png)
 
 ##Features
@@ -10,14 +10,14 @@
 
 ##Requirements
 - Mac OS X 10.9
-- Xcode 6
+- Xcode 7
 
 ##Installation
 ####Direct
 Drag `InfoButton.swift` to your project. That is it!
 
 ####CocoaPods
-[CocoaPods 0.36](http://cocoapods.org) adds supports for Swift and embedded frameworks.
+[CocoaPods](http://cocoapods.org) adds supports for Swift and embedded frameworks.
 
 To integrate InfoButton into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
@@ -43,7 +43,7 @@ Since InfoButton is `@IBDesignable`, Attribute Inspector gets updated like this.
 <img src="images/attrInsp.png" style = "width:350px;"/>
 </div>
 
-Update `Fill Mode`, `Content` and `Primary Color` and there you have InfoButton ready without writing a single line of code.
+Update `Fill Mode`, `Animate Popover`, `Content` and `Primary Color` and there you have InfoButton ready without writing a single line of code.
 
 ##Notes
 - Make sure the height and width of InfoButton are `equal`
