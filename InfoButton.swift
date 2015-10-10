@@ -22,7 +22,7 @@ public class InfoButton : NSControl, NSPopoverDelegate {
             self.needsDisplay = true
         }
     }
-    
+
     var trackingArea: NSTrackingArea!
     override public func updateTrackingAreas() {
         super.updateTrackingAreas()
@@ -82,7 +82,11 @@ public class InfoButton : NSControl, NSPopoverDelegate {
             popover = NSPopover.makePopoverFor(self.content)
             popover.delegate = self
         }
-        popover.showRelativeToRect(self.frame, ofView: self.superview!, preferredEdge: NSRectEdge.MaxX)
+        if popover.shown {
+            popover.close()
+        } else {
+            popover.showRelativeToRect(self.frame, ofView: self.superview!, preferredEdge: NSRectEdge.MaxX)
+        }
     }
 
     override public func mouseEntered(theEvent: NSEvent) { mouseInside = true }
