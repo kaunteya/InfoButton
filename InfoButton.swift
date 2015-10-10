@@ -13,6 +13,7 @@ import Cocoa
 public class InfoButton : NSControl, NSPopoverDelegate {
     var mainSize: CGFloat!
     @IBInspectable var fillMode: Bool = true
+    @IBInspectable var animatePopover: Bool = false
     @IBInspectable var content: String = ""
     @IBInspectable var primaryColor: NSColor = NSColor.scrollBarColor()
     var secondaryColor: NSColor = NSColor.whiteColor()
@@ -79,7 +80,7 @@ public class InfoButton : NSControl, NSPopoverDelegate {
     
     override public func mouseDown(theEvent: NSEvent) {
         if popover == nil {
-            popover = NSPopover.makePopoverFor(self.content)
+            popover = NSPopover.makePopoverFor(self.content, doesAnimate: self.animatePopover)
             popover.delegate = self
         }
         if popover.shown {
@@ -99,7 +100,7 @@ public class InfoButton : NSControl, NSPopoverDelegate {
 
 //MARK: Extension for making a popover from string
 extension NSPopover {
-    class func makePopoverFor(button: String) -> NSPopover {
+    class func makePopoverFor(button: String, doesAnimate: Bool) -> NSPopover {
         let popoverMargin = CGFloat(20)
         func makeTextField(content: String) -> NSTextField {
             let textField = NSTextField(frame: NSZeroRect)
@@ -116,7 +117,7 @@ extension NSPopover {
         
         let popover = NSPopover()
         popover.behavior = NSPopoverBehavior.Transient
-        popover.animates = false
+        popover.animates = doesAnimate
         popover.contentViewController = NSViewController()
         popover.contentViewController!.view = NSView(frame: NSZeroRect)
         
