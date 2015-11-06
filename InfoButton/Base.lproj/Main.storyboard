@@ -723,7 +723,7 @@ To Activate it, you can
                                     <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
                                         <color key="value" red="0.25490197539329529" green="0.63529413938522339" blue="0.87058824300765991" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="content" value="This Info Button has Blue Primary Color"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="content" value="This InfoButton has Primary Color set to Blue"/>
                                 </userDefinedRuntimeAttributes>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEf-52-nKN" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
@@ -841,7 +841,7 @@ You can also set emoji like
                                     <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
                                         <color key="value" red="0.053304396569728851" green="0.34234839677810669" blue="0.28875961899757385" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="content" value="This Info Button has Blue Primary Color"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="content" value="This InfoButton demonstrates Animated Popover"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="animatePopover" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </customView>
