@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'InfoButton'
-  s.version = '0.3.1'
+  s.version = '0.4.0'
   s.license = 'MIT'
   s.summary = 'Simple and Lightweight Information Button for Mac'
   s.homepage = 'https://github.com/kaunteya/InfoButton'
