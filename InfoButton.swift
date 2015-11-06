@@ -80,7 +80,7 @@ public class InfoButton : NSControl, NSPopoverDelegate {
     
     override public func mouseDown(theEvent: NSEvent) {
         if popover == nil {
-            popover = NSPopover.makePopoverFor(self.content, doesAnimate: self.animatePopover)
+            popover = NSPopover(content: self.content, doesAnimate: self.animatePopover)
             popover.delegate = self
         }
         if popover.shown {
@@ -100,11 +100,20 @@ public class InfoButton : NSControl, NSPopoverDelegate {
 
 //MARK: Extension for making a popover from string
 extension NSPopover {
-    class func makePopoverFor(button: String, doesAnimate: Bool) -> NSPopover {
+
+    convenience init(content: String, doesAnimate: Bool) {
+        self.init()
+
+        self.behavior = NSPopoverBehavior.Transient
+        self.animates = doesAnimate
+        self.contentViewController = NSViewController()
+        self.contentViewController!.view = NSView(frame: NSZeroRect)//remove this ??
+
         let popoverMargin = CGFloat(20)
-        func makeTextField(content: String) -> NSTextField {
+        let textField: NSTextField = {
+            content in
             let textField = NSTextField(frame: NSZeroRect)
-//            textField.usesSingleLineMode = false
+
             textField.editable = false
             textField.stringValue = content
             textField.bordered = false
@@ -112,20 +121,12 @@ extension NSPopover {
             textField.sizeToFit()
             textField.setFrameOrigin(NSMakePoint(popoverMargin, popoverMargin))
             return textField
-        }
-        
-        
-        let popover = NSPopover()
-        popover.behavior = NSPopoverBehavior.Transient
-        popover.animates = doesAnimate
-        popover.contentViewController = NSViewController()
-        popover.contentViewController!.view = NSView(frame: NSZeroRect)
-        
-        let textField = makeTextField(button)
-        popover.contentViewController!.view.addSubview(textField)
+            }(content)
+
+        self.contentViewController!.view.addSubview(textField)
         var viewSize = textField.frame.size; viewSize.width += (popoverMargin * 2); viewSize.height += (popoverMargin * 2)
-        popover.contentSize = viewSize
-        return popover
+        self.contentSize = viewSize
+
     }
 }
 //NSMinXEdge NSMinYEdge NSMaxXEdge NSMaxYEdge
