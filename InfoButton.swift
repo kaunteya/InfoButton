@@ -12,6 +12,8 @@ import Cocoa
 @IBDesignable
 public class InfoButton : NSControl, NSPopoverDelegate {
     var mainSize: CGFloat!
+
+    @IBInspectable var showOnHover: Bool = false
     @IBInspectable var fillMode: Bool = true
     @IBInspectable var animatePopover: Bool = false
     @IBInspectable var content: String = ""
@@ -21,6 +23,17 @@ public class InfoButton : NSControl, NSPopoverDelegate {
     var mouseInside = false {
         didSet {
             self.needsDisplay = true
+            if showOnHover {
+                if popover == nil {
+                    popover = NSPopover(content: self.content, doesAnimate: self.animatePopover)
+                }
+                if mouseInside {
+                    popover.showRelativeToRect(self.frame, ofView: self.superview!, preferredEdge: NSRectEdge.MaxX)
+                } else {
+                    popover.close()
+                }
+
+            }
         }
     }
 
@@ -81,7 +94,6 @@ public class InfoButton : NSControl, NSPopoverDelegate {
     override public func mouseDown(theEvent: NSEvent) {
         if popover == nil {
             popover = NSPopover(content: self.content, doesAnimate: self.animatePopover)
-            popover.delegate = self
         }
         if popover.shown {
             popover.close()
@@ -92,9 +104,6 @@ public class InfoButton : NSControl, NSPopoverDelegate {
 
     override public func mouseEntered(theEvent: NSEvent) { mouseInside = true }
     override public func mouseExited(theEvent: NSEvent) { mouseInside = false }
-    public func popoverDidClose(notification: NSNotification) {
-        self.needsDisplay = true
-    }
 
 }
 

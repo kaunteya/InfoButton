@@ -710,14 +710,14 @@ To Activate it, you can
                                 <font key="titleFont" metaFont="system"/>
                             </box>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QoL-ES-orT" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
-                                <rect key="frame" x="104" y="218" width="20" height="20"/>
+                                <rect key="frame" x="104" y="230" width="20" height="20"/>
                                 <animations/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="content" value="This is the default InfoButton"/>
                                 </userDefinedRuntimeAttributes>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bIt-y5-1Cc" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
-                                <rect key="frame" x="420" y="214" width="20" height="20"/>
+                                <rect key="frame" x="420" y="226" width="20" height="20"/>
                                 <animations/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
@@ -727,7 +727,7 @@ To Activate it, you can
                                 </userDefinedRuntimeAttributes>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEf-52-nKN" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
-                                <rect key="frame" x="260" y="216" width="20" height="20"/>
+                                <rect key="frame" x="260" y="228" width="20" height="20"/>
                                 <animations/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="fillMode" value="NO"/>
@@ -768,7 +768,7 @@ You wont receive any promotional SMS from us 😊.</string>
                                 </userDefinedRuntimeAttributes>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eYE-7N-lFY" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
-                                <rect key="frame" x="258" y="156" width="20" height="20"/>
+                                <rect key="frame" x="258" y="187" width="20" height="20"/>
                                 <animations/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="content">
@@ -786,7 +786,7 @@ You can also set emoji like
                                 </userDefinedRuntimeAttributes>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25b-tW-XUw">
-                                <rect key="frame" x="11" y="218" width="93" height="17"/>
+                                <rect key="frame" x="11" y="230" width="93" height="17"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Default Button" id="IE1-sI-52Q">
                                     <font key="font" metaFont="system"/>
@@ -795,7 +795,7 @@ You can also set emoji like
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Er3-9I-uP0">
-                                <rect key="frame" x="152" y="218" width="106" height="17"/>
+                                <rect key="frame" x="152" y="230" width="106" height="17"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Fill Mode OFF" id="Vr7-hl-LEZ">
                                     <font key="font" metaFont="system"/>
@@ -804,7 +804,7 @@ You can also set emoji like
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CG7-d9-8Yv">
-                                <rect key="frame" x="314" y="216" width="104" height="17"/>
+                                <rect key="frame" x="314" y="228" width="104" height="17"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Blue Info Button" id="kZX-Es-Oql">
                                     <font key="font" metaFont="system"/>
@@ -813,7 +813,7 @@ You can also set emoji like
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Feg-QZ-tVl">
-                                <rect key="frame" x="154" y="158" width="95" height="20"/>
+                                <rect key="frame" x="154" y="189" width="95" height="20"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sample Content" id="lC3-ti-X4R">
                                     <font key="font" size="13" name="HelveticaNeue-Light"/>
@@ -822,7 +822,7 @@ You can also set emoji like
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IMR-hT-b9H">
-                                <rect key="frame" x="11" y="158" width="97" height="17"/>
+                                <rect key="frame" x="11" y="189" width="97" height="17"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Empty Content" id="1BT-8y-Px5">
                                     <font key="font" metaFont="system"/>
@@ -831,11 +831,11 @@ You can also set emoji like
                                 </textFieldCell>
                             </textField>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vdb-Jj-Ijh" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
-                                <rect key="frame" x="105" y="156" width="20" height="20"/>
+                                <rect key="frame" x="105" y="187" width="20" height="20"/>
                                 <animations/>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ccw-ec-Ypf" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
-                                <rect key="frame" x="420" y="158" width="20" height="20"/>
+                                <rect key="frame" x="420" y="189" width="20" height="20"/>
                                 <animations/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
@@ -846,9 +846,32 @@ You can also set emoji like
                                 </userDefinedRuntimeAttributes>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cqB-qT-dGk">
-                                <rect key="frame" x="356" y="159" width="62" height="17"/>
+                                <rect key="frame" x="356" y="190" width="62" height="17"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Animated" id="yQP-x4-drK">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D1b-oJ-l7o" customClass="InfoButton" customModule="InfoButton" customModuleProvider="target">
+                                <rect key="frame" x="113" y="152" width="20" height="20"/>
+                                <animations/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="content">
+                                        <string key="value">Popover is shown on mouse hover.
+Set 'Show On Hover' to True</string>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showOnHover" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" red="0.88627451660000001" green="0.40392157439999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6E7-4i-wpM">
+                                <rect key="frame" x="11" y="154" width="98" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Show On Hover" id="97P-KT-9tj">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
