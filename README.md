@@ -1,5 +1,9 @@
 #InfoButton
 
+[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/InfoButton.svg)](https://img.shields.io/cocoapods/v/InfoButton.svg)
+[![Platform](https://img.shields.io/cocoapods/p/InfoButton.svg)](http://cocoadocs.org/docsets/InfoButton)
+[![License](https://img.shields.io/cocoapods/l/InfoButton.svg)](http://cocoadocs.org/docsets/InfoButton)
+
 `InfoButton` is simple and lightweight Information Button for Mac OSX implemented in Swift 2.0
 ![](./images/demo.png)
 
