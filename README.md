@@ -10,7 +10,8 @@
 ##Features
 - Easy to Use
 - Light Mode and Fill Mode
-- Simple and lightweight
+- Animatable Popover
+- Show on Hover
 
 ##Requirements
 - Mac OS X 10.9
@@ -21,9 +22,7 @@
 Drag `InfoButton.swift` to your project. That is it!
 
 ####CocoaPods
-[CocoaPods](http://cocoapods.org) adds supports for Swift and embedded frameworks.
-
-To integrate InfoButton into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate InfoButton into your Xcode project using [CocoaPods](http://cocoapods.org), specify it in your `Podfile`:
 
 ```ruby
 use_frameworks!
