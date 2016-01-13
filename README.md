@@ -54,8 +54,7 @@ Update `Fill Mode`, `Animate Popover`, `Content` and `Primary Color` and there y
 
 ##Todo
 - RTF Support for Popover content
-- Hide after n clicks
-- Popover auto disappear
+- Replace `?` in button with `i` in italics (If you have a suggestion please post it in issues)
 
 ##License
 `InfoButton` is released under the MIT license. See LICENSE for details.
