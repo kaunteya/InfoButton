@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/InfoButton.svg)](http://cocoadocs.org/docsets/InfoButton)
 
 `InfoButton` is simple and lightweight Information Button for Mac OSX implemented in Swift 2.0
-![](./images/demo.png)
+![Demo](./images/demo.png)
 
 ##Features
 - Easy to Use
@@ -42,9 +42,7 @@ In Interface builder, drag a `Custom View` from Object Library and set `Custom C
 
 Since InfoButton is `@IBDesignable`, Attribute Inspector gets updated like this.
 
-<div align="center">
-<img src="images/attrInsp.png" style = "width:350px;"/>
-</div>
+![Attribute Inspector](./images/attrInsp.png)
 
 Update `Fill Mode`, `Animate Popover`, `Content` and `Primary Color` and there you have InfoButton ready without writing a single line of code.
 
