@@ -4,18 +4,13 @@
 [![Platform](https://img.shields.io/cocoapods/p/InfoButton.svg)](http://cocoadocs.org/docsets/InfoButton)
 [![License](https://img.shields.io/cocoapods/l/InfoButton.svg)](http://cocoadocs.org/docsets/InfoButton)
 
-`InfoButton` is simple and lightweight Information Button for Mac OSX implemented in Swift 2.0
+`InfoButton` is simple and lightweight Information Button for Mac OSX implemented in Swift
 ![Demo](./images/demo.png)
 
 ##Features
-- Easy to Use
 - Light Mode and Fill Mode
 - Animatable Popover
 - Show on Hover
-
-##Requirements
-- Mac OS X 10.9
-- Xcode 7
 
 ##Installation
 ####Direct
@@ -30,13 +25,6 @@ use_frameworks!
 pod 'InfoButton'
 ```
 
-Then, run the following command:
-
-```bash
-$ pod install
-```
-
-
 ##Usage
 In Interface builder, drag a `Custom View` from Object Library and set `Custom Class` to `InfoButton`
 
@@ -48,7 +36,7 @@ Update `Fill Mode`, `Animate Popover`, `Content` and `Primary Color` and there y
 
 ##Notes
 - Make sure the height and width of InfoButton are `equal`
-- Press ⌥ ↩ for newline in text field of IB.(Option + Return)
+- Press <kbd>⌥ ↩</kbd> for newline in text field of IB.(Option + Return)
 
 ##Todo
 - RTF Support for Popover content
