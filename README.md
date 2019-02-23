@@ -52,7 +52,3 @@ Update `Fill Mode`, `Animate Popover`, `Content` and `Primary Color` and there y
 ## License
 
 `InfoButton` is released under the MIT license. See LICENSE for details.
-
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kaunteya/infobutton/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
