@@ -43,7 +43,7 @@ open class InfoButton : NSControl, NSPopoverDelegate {
         if trackingArea != nil {
             self.removeTrackingArea(trackingArea)
         }
-        trackingArea = NSTrackingArea(rect: self.bounds, options: [NSTrackingAreaOptions.mouseEnteredAndExited, NSTrackingAreaOptions.activeAlways], owner: self, userInfo: nil)
+        trackingArea = NSTrackingArea(rect: self.bounds, options: [NSTrackingArea.Options.mouseEnteredAndExited, NSTrackingArea.Options.activeAlways], owner: self, userInfo: nil)
         self.addTrackingArea(trackingArea)
     }
     
@@ -60,7 +60,7 @@ open class InfoButton : NSControl, NSPopoverDelegate {
             self.frame.size.height = self.frame.size.width
         }
         self.mainSize = self.frame.size.height
-        stringAttributeDict[NSFontAttributeName] = NSFont.systemFont(ofSize: mainSize * 0.6)
+        stringAttributeDict[convertFromNSAttributedStringKey(NSAttributedString.Key.font)] = NSFont.systemFont(ofSize: mainSize * 0.6)
 
         let inSet: CGFloat = 2
         let rect = NSMakeRect(inSet, inSet, mainSize - inSet * 2, mainSize - inSet * 2)
@@ -79,14 +79,14 @@ open class InfoButton : NSControl, NSPopoverDelegate {
         if fillMode {
             activeColor.setFill()
             circlePath.fill()
-            stringAttributeDict[NSForegroundColorAttributeName] = secondaryColor
+            stringAttributeDict[convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor)] = secondaryColor
         } else {
             activeColor.setStroke()
             circlePath.stroke()
-            stringAttributeDict[NSForegroundColorAttributeName] = (mouseInside ? primaryColor : primaryColor.withAlphaComponent(0.35))
+            stringAttributeDict[convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor)] = (mouseInside ? primaryColor : primaryColor.withAlphaComponent(0.35))
         }
 
-        let attributedString = NSAttributedString(string: "?", attributes: stringAttributeDict)
+        let attributedString = NSAttributedString(string: "?", attributes: convertToOptionalNSAttributedStringKeyDictionary(stringAttributeDict))
         let stringLocation = NSMakePoint(mainSize / 2 - attributedString.size().width / 2, mainSize / 2 - attributedString.size().height / 2)
         attributedString.draw(at: stringLocation)
     }
@@ -113,7 +113,7 @@ extension NSPopover {
     convenience init(content: String, doesAnimate: Bool) {
         self.init()
 
-        self.behavior = NSPopoverBehavior.transient
+        self.behavior = NSPopover.Behavior.transient
         self.animates = doesAnimate
         self.contentViewController = NSViewController()
         self.contentViewController!.view = NSView(frame: NSZeroRect)//remove this ??
@@ -139,3 +139,14 @@ extension NSPopover {
     }
 }
 //NSMinXEdge NSMinYEdge NSMaxXEdge NSMaxYEdge
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
