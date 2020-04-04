@@ -52,3 +52,22 @@ Update `Fill Mode`, `Animate Popover`, `Content` and `Primary Color` and there y
 ## License
 
 `InfoButton` is released under the MIT license. See LICENSE for details.
+
+# Other Apps for Mac
+Apart from making Open source libraries I also make apps for Mac OS. Please have a look.
+
+## [Lexi](https://apps.apple.com/tr/app/lexi-visual-json-browser/id1462580127?mt=12)
+Lexi is a split screen app that lets you browse large JSON with ease.
+
+It also has other featuers like `Prettify JSON`, `Minify JSON` `Copy JSON Path` and `Pin Large JSON` to narrow your visibility
+
+[View on Mac AppStore](https://apps.apple.com/tr/app/lexi-visual-json-browser/id1462580127?mt=12) 
+
+## [Quick Note](https://apps.apple.com/in/app/quicknote-one-click-notes/id1472935217?mt=12) 
+Quick Note is a Mac OS app, lets you quickly add text either from Menu bar or from Shortcut.
+
+The text floats on other windows so that they are always visible
+
+It also supports `Auto Save` and `Pinned Notes`
+
+[View on Mac AppStore](https://apps.apple.com/in/app/quicknote-one-click-notes/id1472935217?mt=12) 
